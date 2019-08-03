@@ -10,23 +10,25 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class DynamiclyAddHandler {
+	
 	private static class DynamicHandler implements EventHandler<StubEvent>, LifecycleAware {
+		
 		private final CountDownLatch shutdownLatch = new CountDownLatch(1);
-
+		
 		@Override
 		public void onEvent(final StubEvent event, final long sequence, final boolean endOfBatch) throws Exception {
 		}
-
+		
 		@Override
 		public void onStart() {
-
+		
 		}
-
+		
 		@Override
 		public void onShutdown() {
 			shutdownLatch.countDown();
 		}
-
+		
 		public void awaitShutdown() throws InterruptedException {
 			shutdownLatch.await();
 		}

@@ -8,7 +8,9 @@ import com.lmax.disruptor.RingBuffer;
  * Created by barkerm on 02/02/15.
  */
 public class PullWithPoller {
+	
 	public static class DataEvent<T> {
+		
 		T data;
 
 		public static <T> EventFactory<DataEvent<T>> factory() {

@@ -9,7 +9,9 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 public class ThreeToOneDisruptor {
+	
 	public static class DataEvent {
+		
 		Object input;
 		Object[] output;
 
